@@ -16,7 +16,7 @@ public class RegistrationTestChrome extends BasicUITestChrome {
     //Успешную регистрацию.
     @Test
     public void successRegistration() {
-        objMainPage.clickPersonalAccount();
+        objMainPage.clickPersonalAccountTopButton();
         objLoginPage.clickRegistrationLink();
         objRegistrationPage.inputRegistrationData("name", "password@password.com", "pass");
         objRegistrationPage.buttonRegistrationClick();
@@ -28,7 +28,7 @@ public class RegistrationTestChrome extends BasicUITestChrome {
     //Ошибку для некорректного пароля. Минимальный пароль — шесть символов.
     @Test
     public void errorShortPassword() {
-        objMainPage.clickPersonalAccount();
+        objMainPage.clickPersonalAccountTopButton();
         objLoginPage.clickRegistrationLink();
         objRegistrationPage.inputRegistrationData("name", "password@password.com", "pass");
         objRegistrationPage.buttonRegistrationClick();
