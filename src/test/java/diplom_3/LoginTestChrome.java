@@ -12,7 +12,7 @@ public class LoginTestChrome extends BasicUITestChrome {
     RegistrationPage objRegistrationPage = new RegistrationPage(webDriver);
     ForgotPasswordPage objForgotPasswordPage = new ForgotPasswordPage(webDriver);
 
-    // вход по кнопке «Войти в аккаунт» на главной,
+    // вход по кнопке «Войти в аккаунт» на главной
     @Test
     public void mainPageEnterAccountTest() {
         objMainPage.clickPersonalAccountEnterButton();
@@ -27,7 +27,7 @@ public class LoginTestChrome extends BasicUITestChrome {
     // вход через кнопку в форме регистрации,
     @Test
     public void registrationPageTest() {
-        //objRegistrationPage
+        objRegistrationPage.buttonEnterClick();
     }
 
     // вход через кнопку в форме восстановления пароля.

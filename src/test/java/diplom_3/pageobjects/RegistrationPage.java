@@ -31,11 +31,14 @@ public class RegistrationPage extends MainAbstractPage {
         driver.findElement(buttonRegistrationRegistrationPage).click();
     }
 
+    public void buttonEnterClick() {
+        driver.findElement(enterButtonRegistrationPage).click();
+    }
+
     public boolean isPasswordErrorDisplayed() {
         new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.visibilityOfElementLocated(errorMessageRegistrationPage));
         boolean success = driver.findElement(errorMessageRegistrationPage).isDisplayed();
         return success;
     }
-
 }
