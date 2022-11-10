@@ -27,12 +27,16 @@ public class LoginTestChrome extends BasicUITestChrome {
     // вход через кнопку в форме регистрации,
     @Test
     public void registrationPageTest() {
+        objMainPage.clickPersonalAccountTopButton();
+        objLoginPage.clickRegistrationLink();
         objRegistrationPage.buttonEnterClick();
     }
 
     // вход через кнопку в форме восстановления пароля.
     @Test
     public void forgetPasswordPageTest() {
+        objMainPage.clickPersonalAccountTopButton();
+        objLoginPage.clickForgotPasswordLink();
         objForgotPasswordPage.clickRememberPasswordLink();
     }
 }
