@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 //Локаторы
 public class MainPage extends MainAbstractPage{
-    private By personalAccount = By.name("Личный Кабинет"); // Локатор кнопки "Личный кабинет"
+    private By personalAccount = By.xpath("//*[@id=\"root\"]/div/header/nav/a/p"); // Локатор кнопки "Личный кабинет"
 
     public MainPage(WebDriver driver) { // конструктор главной страницы
         super(driver);
