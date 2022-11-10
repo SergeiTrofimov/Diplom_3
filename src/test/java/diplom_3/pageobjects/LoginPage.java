@@ -11,6 +11,7 @@ public class LoginPage extends MainPage {
     private By fieldPasswordLoginPage = By.xpath("//*[@id=\"root\"]/div/main/div/form/fieldset[2]/div/div/input"); // Локатор поля "Пароль"
     private By buttonEnterLoginPage = By.className("button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa");
     private By registrationLinkLoginPage = By.xpath("//*[@id=\"root\"]/div/main/div/div/p[1]/a"); // Локатор ссылки регистрация
+    private By forgotPasswordLink = By.className("Auth_link__1fOlj");
 
     //Конструктор
     public LoginPage(WebDriver driver) {
@@ -26,7 +27,12 @@ public class LoginPage extends MainPage {
     public void clickRegistrationLink() {
         driver.findElement(registrationLinkLoginPage).click();
     }
-    public boolean isButtonEnterIsDisplayed (){
+
+    public void clickForgotPasswordLink() {
+        driver.findElement(forgotPasswordLink).click();
+    }
+
+    public boolean isButtonEnterIsDisplayed() {
         new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.visibilityOfElementLocated(buttonEnterLoginPage));
         boolean success = driver.findElement(buttonEnterLoginPage).isDisplayed();
