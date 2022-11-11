@@ -16,7 +16,7 @@ public class MainPage extends MainAbstractPage {
 
     //Методы
     public void clickPersonalAccountTopButton() { // кликаем кнопку "Личный кабинет"
-        new WebDriverWait(driver, 5)
+        new WebDriverWait(driver, 15)
                 .until(ExpectedConditions.visibilityOfElementLocated(personalAccountTopButton));
         driver.findElement(personalAccountTopButton).click();
     }
