@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class MainPage extends MainAbstractPage {
     private By personalAccountTopButton = By.xpath("//*[@id=\"root\"]/div/header/nav/a/p"); // Локатор кнопки "Личный кабинет"
     private By personalAccountEnterButton = By.xpath("//*[@id=\"root\"]/div/main/section[2]/div/button");
+    private By burgerText = By.xpath("//*[@id=\"root\"]/div/main/section[1]/h1");
 
     public MainPage(WebDriver driver) { // конструктор главной страницы
         super(driver);
@@ -23,5 +24,12 @@ public class MainPage extends MainAbstractPage {
 
     public void clickPersonalAccountEnterButton() {
         driver.findElement(personalAccountEnterButton).click();
+    }
+
+    public boolean isBurgerTextIsDisplayed() {
+        new WebDriverWait(driver, 15)
+                .until(ExpectedConditions.visibilityOfElementLocated(burgerText));
+        boolean success = driver.findElement(burgerText).isDisplayed();
+        return success;
     }
 }

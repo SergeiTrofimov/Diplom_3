@@ -31,6 +31,7 @@ public class PersonalAccountTest extends BasicUITestChrome {
         objLoginPage.clickEnterButton();
         objMainPage.clickPersonalAccountTopButton();
         objPersonalAccount.clickConstructorLink();
+        assertTrue("Ошибка", objMainPage.isBurgerTextIsDisplayed());
     }
 
     @Test
@@ -40,6 +41,7 @@ public class PersonalAccountTest extends BasicUITestChrome {
         objLoginPage.clickEnterButton();
         objMainPage.clickPersonalAccountTopButton();
         objPersonalAccount.clickBurgerPicture();
+        assertTrue("Ошибка", objMainPage.isBurgerTextIsDisplayed());
     }
 
     //Проверь выход по кнопке «Выйти» в личном кабинете.
