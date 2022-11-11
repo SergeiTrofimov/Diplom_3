@@ -12,8 +12,7 @@ public class LoginPage extends MainAbstractPage {
     private By buttonEnterLoginPage = By.xpath("//*[@id=\"root\"]/div/main/div/form/button");
     private By registrationLinkLoginPage = By.xpath("//*[@id=\"root\"]/div/main/div/div/p[1]/a"); // Локатор ссылки регистрация
     private By forgotPasswordLink = By.className("Auth_link__1fOlj");
-    private By burgerPicture = By.xpath("//*[@id=\"root\"]/div/header/nav/div/a/svg");
-    private By constructorLink = By.className("AppHeader_header__link__3D_hX");
+
 
     //Конструктор
     public LoginPage(WebDriver driver) {
@@ -38,13 +37,7 @@ public class LoginPage extends MainAbstractPage {
         driver.findElement(buttonEnterLoginPage).click();
     }
 
-    public void clickBurgerPicture() {
-        driver.findElement(burgerPicture).click();
-    }
 
-    public void clickConstructorLink() {
-        driver.findElement(constructorLink).click();
-    }
 
     public boolean isButtonEnterIsDisplayed() {
         new WebDriverWait(driver, 5)

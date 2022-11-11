@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class PersonalAccountTest extends BasicUITestChrome{
+public class PersonalAccountTest extends BasicUITestChrome {
     MainPage objMainPage = new MainPage(webDriver);
     LoginPage objLoginPage = new LoginPage(webDriver);
     RegistrationPage objRegistrationPage = new RegistrationPage(webDriver);
@@ -15,21 +15,38 @@ public class PersonalAccountTest extends BasicUITestChrome{
 
     //Проверь переход по клику на «Личный кабинет».
     @Test
-    public void clickToPersonalAccountLinkTest(){
+    public void clickToPersonalAccountLinkTest() {
         objMainPage.clickPersonalAccountTopButton();
-        objLoginPage.inputLoginData("svt@svt.com","svt1234");
+        objLoginPage.inputLoginData("svt@svt.com", "svt1234");
         objLoginPage.clickEnterButton();
         objMainPage.clickPersonalAccountTopButton();
         assertTrue("Ошибка", objPersonalAccount.isLogoutButtonIsDisplayed());
     }
+
     //Проверь переход по клику на «Конструктор» и на логотип Stellar Burgers.
     @Test
-    public void clickToConstructorLink(){}
+    public void clickToConstructorLink() {
+        objMainPage.clickPersonalAccountTopButton();
+        objLoginPage.inputLoginData("svt@svt.com", "svt1234");
+        objLoginPage.clickEnterButton();
+        objMainPage.clickPersonalAccountTopButton();
+        objPersonalAccount.clickConstructorLink();
+    }
+
+    @Test
+    public void clickToBurgerPicture() {
+        objMainPage.clickPersonalAccountTopButton();
+        objLoginPage.inputLoginData("svt@svt.com", "svt1234");
+        objLoginPage.clickEnterButton();
+        objMainPage.clickPersonalAccountTopButton();
+        objPersonalAccount.clickBurgerPicture();
+    }
+
     //Проверь выход по кнопке «Выйти» в личном кабинете.
     @Test
-    public void clickLogOutTest(){
+    public void clickLogOutTest() {
         objMainPage.clickPersonalAccountTopButton();
-        objLoginPage.inputLoginData("svt@svt.com","svt1234");
+        objLoginPage.inputLoginData("svt@svt.com", "svt1234");
         objLoginPage.clickEnterButton();
         objMainPage.clickPersonalAccountTopButton();
         objPersonalAccount.clickLogoutButton();
