@@ -13,6 +13,7 @@ public class MainPage extends MainAbstractPage {
     private By bunConstructor = By.xpath("//*[@id=\"root\"]/div/main/section[1]/div[1]/div[1]/span");
     private By sauceConstructor = By.xpath("//*[@id=\"root\"]/div/main/section[1]/div[1]/div[2]/span");
     private By mainConstructor = By.xpath("//*[@id=\"root\"]/div/main/section[1]/div[1]/div[3]/span");
+    private By selectedConstructorLocator = By.className("tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect");
 
 
     public MainPage(WebDriver driver) { // конструктор главной страницы
