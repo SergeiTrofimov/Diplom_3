@@ -24,6 +24,6 @@ public class BasicUITestChrome {
     @AfterClass
     public static void teardown() {
         // Закрой браузер
-        // webDriver.quit();
+        webDriver.quit();
     }
 }
