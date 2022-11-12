@@ -13,7 +13,6 @@ public class LoginPage extends MainAbstractPage {
     private By registrationLinkLoginPage = By.xpath("//*[@id=\"root\"]/div/main/div/div/p[1]/a"); // Локатор ссылки регистрация
     private By forgotPasswordLink = By.className("Auth_link__1fOlj");
 
-
     //Конструктор
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -36,8 +35,6 @@ public class LoginPage extends MainAbstractPage {
     public void clickEnterButton() {
         driver.findElement(buttonEnterLoginPage).click();
     }
-
-
 
     public boolean isButtonEnterIsDisplayed() {
         new WebDriverWait(driver, 5)

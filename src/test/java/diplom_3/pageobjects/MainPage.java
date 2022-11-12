@@ -17,7 +17,7 @@ public class MainPage extends MainAbstractPage {
     private By mainConstructor = By.xpath("//*[@id=\"root\"]/div/main/section[1]/div[1]/div[3]/span");
     private By selectedConstructorLocator = By.cssSelector("#root > div > main > section.BurgerIngredients_ingredients__1N8v2 > div:nth-child(2) > div.tab_tab__1SPyG.tab_tab_type_current__2BEPc.pt-4.pr-10.pb-4.pl-10.noselect");
 
-
+    // Конструктор
     public MainPage(WebDriver driver) { // конструктор главной страницы
         super(driver);
     }
@@ -32,30 +32,35 @@ public class MainPage extends MainAbstractPage {
     public void clickBun() {
         driver.findElement(bunConstructor).click();
     }
+
     public void clickSauce() {
         driver.findElement(sauceConstructor).click();
     }
+
     public void clickMain() {
         driver.findElement(mainConstructor).click();
     }
+
     public void clickPersonalAccountEnterButton() {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(personalAccountEnterButton).click();
     }
+
     public boolean isBurgerTextIsDisplayed() {
         new WebDriverWait(driver, 15)
                 .until(ExpectedConditions.visibilityOfElementLocated(burgerText));
         boolean success = driver.findElement(burgerText).isDisplayed();
         return success;
     }
+
     public boolean isSelectedConstructorIsDisplayed() {
         new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.visibilityOfElementLocated(selectedConstructorLocator));
         boolean success = driver.findElement(selectedConstructorLocator).isDisplayed();
         return success;
     }
-    public String test()
-    {
+
+    public String test() {
         new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.visibilityOfElementLocated(personalAccountEnterButton));
         String name = driver.findElement(personalAccountEnterButton).getText();

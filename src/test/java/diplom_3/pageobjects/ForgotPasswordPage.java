@@ -7,7 +7,6 @@ public class ForgotPasswordPage extends MainAbstractPage {
     // Локаторы
     private By rememberPasswordLink = By.className("Auth_link__1fOlj");
 
-
     //Конструктор
     public ForgotPasswordPage(WebDriver driver) {
         super(driver);
