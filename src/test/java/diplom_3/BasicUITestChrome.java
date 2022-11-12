@@ -1,5 +1,6 @@
 package diplom_3;
 
+import diplom_3.helper.UserHelper;
 import diplom_3.pageobjects.MainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.AfterClass;
@@ -9,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BasicUITestChrome {
     protected static WebDriver webDriver;
+    protected static UserHelper userHelper = new UserHelper();
 
     @BeforeClass
     public static void setup() // приведения систмы в првоначальное состояние
@@ -22,6 +24,6 @@ public class BasicUITestChrome {
     @AfterClass
     public static void teardown() {
         // Закрой браузер
-       // webDriver.quit();
+        // webDriver.quit();
     }
 }
