@@ -51,4 +51,11 @@ public class MainPage extends MainAbstractPage {
         boolean success = driver.findElement(selectedConstructorLocator).isDisplayed();
         return success;
     }
+    public String test()
+    {
+        new WebDriverWait(driver, 5)
+                .until(ExpectedConditions.visibilityOfElementLocated(personalAccountEnterButton));
+        String name = driver.findElement(personalAccountEnterButton).getText();
+        return name;
+    }
 }

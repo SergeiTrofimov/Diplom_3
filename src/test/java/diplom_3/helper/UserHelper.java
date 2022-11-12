@@ -22,7 +22,7 @@ public class UserHelper {
                 .baseUri(hostname)
                 .body(userRegistration)
                 .when()
-                .post(REGISTER_USER).then().statusCode(201);
+                .post(REGISTER_USER).then().statusCode(200);
         User user = new User(userRegistration.getEmail(),userRegistration.getPassword());
         return user;
     }
