@@ -21,7 +21,6 @@ public class RegistrationTestChrome extends BasicUITestChrome {
         objRegistrationPage.inputRegistrationData("name", "password@password.com", "pass");
         objRegistrationPage.buttonRegistrationClick();
         boolean success = objLoginPage.isButtonEnterIsDisplayed();
-       // assertFalse("Ошибка", objRegistrationPage.isPasswordErrorDisplayed());
         assertTrue("Ошибка", objLoginPage.isButtonEnterIsDisplayed());
     }
 
