@@ -1,14 +1,6 @@
 package diplom_3.helper;
 
-public class UserRegistration extends User{
-
-
-
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+public class UserRegistration extends User {
     //Переменные
     private String name;
 
@@ -18,8 +10,12 @@ public class UserRegistration extends User{
         this.name = name;
     }
 
-    //Геттеры
+    //Геттеры и сеттеры
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
