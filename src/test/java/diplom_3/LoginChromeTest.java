@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class LoginTestChrome extends BasicUITestChrome {
+public class LoginChromeTest extends BasicUIChromeTest {
     UserRegistration user;
     MainPage objMainPage = new MainPage(webDriver);
     LoginPage objLoginPage = new LoginPage(webDriver);

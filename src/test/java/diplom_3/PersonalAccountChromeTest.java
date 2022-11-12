@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class PersonalAccountTestChrome extends BasicUITestChrome {
+public class PersonalAccountChromeTest extends BasicUIChromeTest {
     MainPage objMainPage = new MainPage(webDriver);
     LoginPage objLoginPage = new LoginPage(webDriver);
     RegistrationPage objRegistrationPage = new RegistrationPage(webDriver);

@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class ConstructorTestChrome extends BasicUITestChrome {
+public class ConstructorChromeTest extends BasicUIChromeTest {
     MainPage objMainPage = new MainPage(webDriver);
 // Конструктор
 
