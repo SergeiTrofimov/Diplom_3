@@ -1,11 +1,11 @@
 package diplom_3;
 
-
 import diplom_3.helper.UserRegistration;
 import diplom_3.pageobjects.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.Assert.assertTrue;
 
@@ -30,9 +30,8 @@ public class PersonalAccountChromeTest extends BasicUIChromeTest {
         userHelper.deleteUser(user);
     }
 
-
-    //Проверь переход по клику на «Личный кабинет».
     @Test
+    @DisplayName("Проверь переход по клику на «Личный кабинет».")
     public void clickToPersonalAccountLinkTest() {
         objMainPage.clickPersonalAccountTopButton();
         objLoginPage.inputLoginData(user.getEmail(), user.getPassword());
@@ -41,8 +40,8 @@ public class PersonalAccountChromeTest extends BasicUIChromeTest {
         assertTrue("Ошибка", objPersonalAccountPage.isLogoutButtonIsDisplayed());
     }
 
-    //Проверь переход по клику на «Конструктор» и на логотип Stellar Burgers.
     @Test
+    @DisplayName("Проверь переход по клику на «Конструктор».")
     public void clickToConstructorLink() {
         objMainPage.clickPersonalAccountTopButton();
         objLoginPage.inputLoginData(user.getEmail(), user.getPassword());
@@ -53,6 +52,7 @@ public class PersonalAccountChromeTest extends BasicUIChromeTest {
     }
 
     @Test
+    @DisplayName("Проверь переход по клику на логотип Stellar Burgers.")
     public void clickToBurgerPicture() {
         objMainPage.clickPersonalAccountTopButton();
         objLoginPage.inputLoginData(user.getEmail(), user.getPassword());
@@ -62,8 +62,8 @@ public class PersonalAccountChromeTest extends BasicUIChromeTest {
         assertTrue("Ошибка", objMainPage.isBurgerTextIsDisplayed());
     }
 
-    //Проверь выход по кнопке «Выйти» в личном кабинете.
     @Test
+    @DisplayName("Проверь выход по логауту")
     public void clickLogOutTest() {
         objMainPage.clickPersonalAccountTopButton();
         objLoginPage.inputLoginData(user.getEmail(), user.getPassword());
