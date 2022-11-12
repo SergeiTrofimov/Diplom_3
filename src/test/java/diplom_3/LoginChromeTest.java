@@ -1,10 +1,7 @@
 package diplom_3;
 
 import diplom_3.helper.UserRegistration;
-import diplom_3.pageobjects.ForgotPasswordPage;
-import diplom_3.pageobjects.LoginPage;
-import diplom_3.pageobjects.MainPage;
-import diplom_3.pageobjects.RegistrationPage;
+import diplom_3.pageobjects.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,21 +14,25 @@ public class LoginChromeTest extends BasicUIChromeTest {
     LoginPage objLoginPage = new LoginPage(webDriver);
     RegistrationPage objRegistrationPage = new RegistrationPage(webDriver);
     ForgotPasswordPage objForgotPasswordPage = new ForgotPasswordPage(webDriver);
+    PersonalAccountPage objPersonalAccountPage = new PersonalAccountPage (webDriver);
 
     @Before
-    public void registrationTestUser() {
+    public void registrationTestUser() throws InterruptedException {
         user = userHelper.generateRandomUserCredentials(6);
         userHelper.apiUserRegistration(user);
     }
 
     @After
     public void testCleanUp() {
+        objMainPage.clickPersonalAccountTopButton();
+        objPersonalAccountPage.clickLogoutButton();
         userHelper.deleteUser(user);
     }
 
     // вход по кнопке «Войти в аккаунт» на главной
     @Test
     public void mainPageEnterAccountTest() {
+        webDriver.get(Constants.hostname);
         objMainPage.clickPersonalAccountEnterButton();
         objLoginPage.inputLoginData(user.getEmail(), user.getPassword());
         objLoginPage.clickEnterButton();
@@ -52,6 +53,7 @@ public class LoginChromeTest extends BasicUIChromeTest {
     public void registrationPageTest() {
         objMainPage.clickPersonalAccountTopButton();
         objLoginPage.clickRegistrationLink();
+        objRegistrationPage.buttonEnterLinkClick();
         objLoginPage.inputLoginData(user.getEmail(), user.getPassword());
         objLoginPage.clickEnterButton();
         assertEquals ("Кнопка не сменила название", "Оформить заказ",objMainPage.test());

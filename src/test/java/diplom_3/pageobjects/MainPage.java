@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 //Локаторы
 public class MainPage extends MainAbstractPage {
     private By personalAccountTopButton = By.xpath("//*[@id=\"root\"]/div/header/nav/a/p"); // Локатор кнопки "Личный кабинет"
@@ -37,6 +39,7 @@ public class MainPage extends MainAbstractPage {
         driver.findElement(mainConstructor).click();
     }
     public void clickPersonalAccountEnterButton() {
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(personalAccountEnterButton).click();
     }
     public boolean isBurgerTextIsDisplayed() {

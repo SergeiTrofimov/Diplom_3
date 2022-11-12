@@ -13,7 +13,7 @@ public class RegistrationPage extends MainAbstractPage {
     private By fieldPasswordRegistrationPage = By.xpath("//*[@id=\"root\"]/div/main/div/form/fieldset[3]/div/div/input");
     private By buttonRegistrationRegistrationPage = By.xpath("//*[@id=\"root\"]/div/main/div/form/button");
     private By errorMessageRegistrationPage = By.xpath("//*[@id=\"root\"]/div/main/div/form/fieldset[3]/div/p");
-    private By enterButtonRegistrationPage = By.className("Auth_link__1fOlj");
+    private By enterLinkRegistrationPage = By.className("Auth_link__1fOlj");
 
     //Конструктор
     public RegistrationPage(WebDriver driver) {
@@ -31,8 +31,10 @@ public class RegistrationPage extends MainAbstractPage {
         driver.findElement(buttonRegistrationRegistrationPage).click();
     }
 
-    public void buttonEnterClick() {
-        driver.findElement(enterButtonRegistrationPage).click();
+    public void buttonEnterLinkClick() {
+        new WebDriverWait(driver, 5)
+                .until(ExpectedConditions.visibilityOfElementLocated(enterLinkRegistrationPage));
+        driver.findElement(enterLinkRegistrationPage).click();
     }
 
     public boolean isPasswordErrorDisplayed() {
