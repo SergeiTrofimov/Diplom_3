@@ -1,30 +1,25 @@
 package diplom_3.helper;
 
-public class UserRegistration {
+public class UserRegistration extends User{
+
+
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     //Переменные
-    User user;
     private String name;
 
     //Конструктор
-    public UserRegistration(User user, String name) {
-        this.user = user;
+    public UserRegistration(String email, String password, String name) {
+        super(email, password);
         this.name = name;
     }
 
     //Геттеры
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

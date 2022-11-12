@@ -1,5 +1,6 @@
 package diplom_3;
 
+import diplom_3.helper.UserRegistration;
 import diplom_3.pageobjects.ForgotPasswordPage;
 import diplom_3.pageobjects.LoginPage;
 import diplom_3.pageobjects.MainPage;
@@ -16,10 +17,12 @@ public class LoginTestChrome extends BasicUITestChrome {
     // вход по кнопке «Войти в аккаунт» на главной
     @Test
     public void mainPageEnterAccountTest() {
-
+        UserRegistration user = userHelper.generateRandomUserCredentials(6);
+        userHelper.apiUserRegistration(user);
         objMainPage.clickPersonalAccountEnterButton();
-        objLoginPage.inputLoginData("svt@svt.com", "svt1234");
+        // objLoginPage.inputLoginData(user.getUser().getEmail(),user.getUser().getPassword());
         objLoginPage.clickEnterButton();
+        //userHelper.deleteUser(user.getUser());
     }
 
     // вход через кнопку «Личный кабинет»,

@@ -22,10 +22,10 @@ public class RegistrationTestChrome extends BasicUITestChrome {
         UserRegistration user = userHelper.generateRandomUserCredentials(8);
         objMainPage.clickPersonalAccountTopButton();
         objLoginPage.clickRegistrationLink();
-        objRegistrationPage.inputRegistrationData(user.getName(),user.getUser().getEmail(),user.getUser().getPassword());
+        objRegistrationPage.inputRegistrationData(user.getName(),user.getEmail(),user.getPassword());
         objRegistrationPage.buttonRegistrationClick();
         assertTrue("Ошибка", objLoginPage.isButtonEnterIsDisplayed());
-        userHelper.deleteUser(user.getUser());
+        userHelper.deleteUser(user);
     }
 
     //Ошибку для некорректного пароля. Минимальный пароль — шесть символов.
@@ -34,7 +34,7 @@ public class RegistrationTestChrome extends BasicUITestChrome {
         UserRegistration user = userHelper.generateRandomUserCredentials(4);
         objMainPage.clickPersonalAccountTopButton();
         objLoginPage.clickRegistrationLink();
-        objRegistrationPage.inputRegistrationData(user.getName(),user.getUser().getEmail(),user.getUser().getPassword());
+        objRegistrationPage.inputRegistrationData(user.getName(),user.getEmail(),user.getPassword());
         objRegistrationPage.buttonRegistrationClick();
         assertTrue("Ошибка", objRegistrationPage.isPasswordErrorDisplayed());
     }

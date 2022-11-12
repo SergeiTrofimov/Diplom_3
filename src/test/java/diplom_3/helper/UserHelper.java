@@ -12,8 +12,7 @@ public class UserHelper {
         String name = RandomStringUtils.randomAlphabetic(8);
         String email = RandomStringUtils.randomAlphabetic(5) + "@" + RandomStringUtils.randomAlphabetic(4) + ".com";
         String password = RandomStringUtils.randomAlphabetic(passwordLength);
-        User user = new User(email, password);
-        UserRegistration userRegistration = new UserRegistration(user, name);
+        UserRegistration userRegistration = new UserRegistration(email,password, name);
         return userRegistration;
     }
 
@@ -24,7 +23,7 @@ public class UserHelper {
                 .body(userRegistration)
                 .when()
                 .post(REGISTER_USER).then().statusCode(201);
-        User user = new User(userRegistration.getUser().getEmail(), userRegistration.getUser().getPassword());
+        User user = new User(userRegistration.getEmail(),userRegistration.getPassword());
         return user;
     }
 
