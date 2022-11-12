@@ -17,6 +17,17 @@ public class UserHelper {
         return userRegistration;
     }
 
+    public User apiUserRegistration(UserRegistration userRegistration) {
+        given().log().all()
+                .header("Content-type", "application/json")
+                .baseUri(hostname)
+                .body(userRegistration)
+                .when()
+                .post(REGISTER_USER).then().statusCode(201);
+        User user = new User(userRegistration.getUser().getEmail(), userRegistration.getUser().getPassword());
+        return user;
+    }
+
     public void deleteUser(User user) {
         // Логинимся пользователем
         Response response = given().log().all()

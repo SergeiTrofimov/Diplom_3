@@ -16,7 +16,10 @@ public class LoginTestChrome extends BasicUITestChrome {
     // вход по кнопке «Войти в аккаунт» на главной
     @Test
     public void mainPageEnterAccountTest() {
+
         objMainPage.clickPersonalAccountEnterButton();
+        objLoginPage.inputLoginData("svt@svt.com", "svt1234");
+        objLoginPage.clickEnterButton();
     }
 
     // вход через кнопку «Личный кабинет»,

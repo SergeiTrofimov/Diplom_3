@@ -4,6 +4,7 @@ import diplom_3.helper.UserRegistration;
 import diplom_3.pageobjects.LoginPage;
 import diplom_3.pageobjects.MainPage;
 import diplom_3.pageobjects.RegistrationPage;
+import org.junit.After;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -13,6 +14,7 @@ public class RegistrationTestChrome extends BasicUITestChrome {
     MainPage objMainPage = new MainPage(webDriver);
     LoginPage objLoginPage = new LoginPage(webDriver);
     RegistrationPage objRegistrationPage = new RegistrationPage(webDriver);
+
 
     //Успешную регистрацию.
     @Test
