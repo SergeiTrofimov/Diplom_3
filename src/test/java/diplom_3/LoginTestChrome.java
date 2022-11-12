@@ -35,14 +35,16 @@ public class LoginTestChrome extends BasicUITestChrome {
         objMainPage.clickPersonalAccountEnterButton();
         objLoginPage.inputLoginData(user.getEmail(), user.getPassword());
         objLoginPage.clickEnterButton();
-        String result = objMainPage.test();
-        assertEquals ("Кнопка не сменила название", "Оформить заказ",result);
+        assertEquals ("Кнопка не сменила название", "Оформить заказ",objMainPage.test());
     }
 
     // вход через кнопку «Личный кабинет»,
     @Test
     public void mainPageTopEnterAccountTest() {
         objMainPage.clickPersonalAccountTopButton();
+        objLoginPage.inputLoginData(user.getEmail(), user.getPassword());
+        objLoginPage.clickEnterButton();
+        assertEquals ("Кнопка не сменила название", "Оформить заказ",objMainPage.test());
     }
 
     // вход через кнопку в форме регистрации,
@@ -50,8 +52,9 @@ public class LoginTestChrome extends BasicUITestChrome {
     public void registrationPageTest() {
         objMainPage.clickPersonalAccountTopButton();
         objLoginPage.clickRegistrationLink();
-        objRegistrationPage.buttonEnterClick();
-        System.out.println(objMainPage.test());
+        objLoginPage.inputLoginData(user.getEmail(), user.getPassword());
+        objLoginPage.clickEnterButton();
+        assertEquals ("Кнопка не сменила название", "Оформить заказ",objMainPage.test());
     }
 
     // вход через кнопку в форме восстановления пароля.
@@ -60,5 +63,8 @@ public class LoginTestChrome extends BasicUITestChrome {
         objMainPage.clickPersonalAccountTopButton();
         objLoginPage.clickForgotPasswordLink();
         objForgotPasswordPage.clickRememberPasswordLink();
+        objLoginPage.inputLoginData(user.getEmail(), user.getPassword());
+        objLoginPage.clickEnterButton();
+        assertEquals ("Кнопка не сменила название", "Оформить заказ",objMainPage.test());
     }
 }
