@@ -1,10 +1,10 @@
 package diplom_3.helper;
 
+import diplom_3.Constants;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomStringUtils;
 
-import static diplom_3.Constants.*;
 import static io.restassured.RestAssured.given;
 
 public class UserHelper {
@@ -22,10 +22,10 @@ public class UserHelper {
     public User apiUserRegistration(UserRegistration userRegistration) {
         given().log().all()
                 .header("Content-type", "application/json")
-                .baseUri(hostname)
+                .baseUri(Constants.hostname)
                 .body(userRegistration)
                 .when()
-                .post(REGISTER_USER).then().statusCode(200);
+                .post(Constants.REGISTER_USER).then().statusCode(200);
         User user = new User(userRegistration.getEmail(), userRegistration.getPassword());
         return user;
     }
@@ -35,16 +35,16 @@ public class UserHelper {
         // Логинимся пользователем
         Response response = given().log().all()
                 .header("Content-type", "application/json")
-                .baseUri(hostname)
+                .baseUri(Constants.hostname)
                 .body(user)
                 .when()
-                .post(USER_LOGIN);
+                .post(Constants.USER_LOGIN);
         //Удаляем пользователя
         given().log().all()
                 .header("authorization", response.getBody().as(LoginUserResponse.class).getAccessToken())
                 .header("Content-type", "application/json")
-                .baseUri(hostname)
+                .baseUri(Constants.hostname)
                 .when()
-                .delete(USER_RUD).then().statusCode(202);
+                .delete(Constants.USER_RUD).then().statusCode(202);
     }
 }
